@@ -6,9 +6,12 @@ this module makes an empty class Rectangle that defines a rectangle"""
 class Rectangle:
     '''an empty class Rectangle that defines a rectangle by:
     (basen on 3-rectangle.py)'''
+    number_of_instances = 0
+
     def __init__(self, width=0, height=0):
         self.width = width
         self.height = height
+        Rectangle.number_of_instances += 1
 
     @property
     def width(self):
@@ -54,3 +57,7 @@ class Rectangle:
     def __repr__(self):
         new_insta = self.__class__.__name__ + "(" + repr(self.width) + ", "
         return(new_insta + repr(self.height) + ")")
+
+    def __del__(self):
+        Rectangle.number_of_instances -= 1
+        print("Bye rectangle...")
