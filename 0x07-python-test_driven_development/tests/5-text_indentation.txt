@@ -1,0 +1,33 @@
+>>> text_indentation = __import__('5-text_indentation').text_indentation
+
+
+Pass a string into this function and the string will be printed back out with 2 new lines after each '.', '?', and ':'. Lines printed will not begin nor end with spaces.
+==============================================================================
+
+>>> text_indentation("Eggs.")
+Eggs.
+<BLANKLINE>
+
+>>> text_indentation("Eggs. Eggs!")
+Eggs.
+<BLANKLINE>
+Eggs!
+
+>>> text_indentation("Egg? Eggn't! Egg, egg: egg.")
+Egg?
+<BLANKLINE>
+Eggn't! Egg, egg:
+<BLANKLINE>
+egg.
+<BLANKLINE>
+
+>>> text_indentation("         Egg memes.         ")
+Egg memes.
+<BLANKLINE>
+
+Passing something that is not a string
+======================================
+
+>>> text_indentation(1024)
+Traceback (most recent call last):
+TypeError: text must be a string
