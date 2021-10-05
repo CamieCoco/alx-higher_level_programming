@@ -1,0 +1,44 @@
+>>> print_square = __import__('4-print_square').print_square
+
+=========================================================================================================
+= Pass an int that is greater than 0 to this function and it will print a square with those dimensions. =
+=========================================================================================================
+
+>>> print_square(4)
+####
+####
+####
+####
+
+====================================
+= Passing a float to this function =
+====================================
+
+>>> print_square(3.14)
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+===============================================
+= Passing a negative integer to this function =
+===============================================
+
+>>> print_square(-2)
+Traceback (most recent call last):
+ValueError: size must be >= 0
+
+====================================
+= Passing strings to this function =
+====================================
+
+>>> print_square("egg")
+Traceback (most recent call last):
+TypeError: size must be an integer
+
+
+====================
+= Missing argument =
+====================
+
+>>> print_square()
+Traceback (most recent call last):
+TypeError: print_square() missing 1 required positional argument: 'size'
