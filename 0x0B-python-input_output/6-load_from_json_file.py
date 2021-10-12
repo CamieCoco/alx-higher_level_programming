@@ -1,15 +1,9 @@
 #!/usr/bin/python3
-"""
- function that creates an Object from JSON :
-"""
+"""Write a function that creates an Object from a JSON file:"""
 import json
 
 
 def load_from_json_file(filename):
-    """
-    You must use the with statement
-    ou t need to manage exceptions if the JSON string t
-    represent an object.
-    """
-    with open(filename, mode="r") as myFile:
-        return(json.load(myFile)) 
+    """Write a function that creates an Object from a JSON file:"""
+    with open(filename, encoding='utf-8') as f:
+        return json.load(f)
