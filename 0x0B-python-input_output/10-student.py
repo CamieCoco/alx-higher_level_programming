@@ -1,29 +1,29 @@
 #!/usr/bin/python3
-"""
-class Student that defines a student by: (based on 9-student.py)
-"""
+"""Write a class Student that defines a student by:"""
 
 
 class Student:
-    """
-    Public instance attributes:
-    first_name
-    last_name
-    age
-    """
+    """Class Student"""
+
     def __init__(self, first_name, last_name, age):
+        """ Inicialitation
+        Args:
+            first_name (str): first name
+            last_name (str): last name
+            age (int): age
+        """
         self.first_name = first_name
         self.last_name = last_name
         self.age = age
 
     def to_json(self, attrs=None):
-        self.attrs = attrs
-        if type(attrs) is not list:
-            return(self.__dict__)
-        else:
-            dicc = {}
-            for index in attrs:
-                if type(index) is str:
-                    if index in self.__dict__.keys():
-                        dicc[index] = self.__dict__.get(index)
-            return(dicc)
+        """that retrieves a dictionary representation of a Student instance
+        Args:
+            first_name (str): first name
+            last_name (str): last name
+            age (int): age
+        """
+        if (type(attrs) == list and
+                all(type(ele) == str for ele in attrs)):
+            return {i: getattr(self, i) for i in attrs if hasattr(self, i)}
+        return self.__dict__
