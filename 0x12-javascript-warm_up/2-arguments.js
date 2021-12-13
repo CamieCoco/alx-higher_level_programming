@@ -1,3 +1,13 @@
 #!/usr/bin/node
-const myVar = 'C is fun\nPython is cool\nJavascript is amazing';
-console.log(myVar)
+/*
+    script that prints a message depending of the number of arguments passed
+*/
+const argv = process.argv;
+const numberArgv = argv.length;
+if (numberArgv === 2) {
+  console.log('No argument');
+} else if (numberArgv === 3) {
+  console.log('Argument found');
+} else {
+  console.log('Arguments found');
+}
