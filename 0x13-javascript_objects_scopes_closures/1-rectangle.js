@@ -1,12 +1,12 @@
 #!/usr/bin/node
 /*
-    If w or h is equal to 0 or not a positive integer, create an empty object
+    A class Rectangle that defines a rectangle
+    The constructor must take 2 arguments w and h
+    Initialize the instance attribute width with the value of w
+    Initialize the instance attribute height with the value of h
 */
 class Rectangle {
   constructor (w, h) {
-    if (h <= 0 || w <= 0 || h === undefined || w === undefined) {
-      return this;
-    }
     this.width = w;
     this.height = h;
   }
