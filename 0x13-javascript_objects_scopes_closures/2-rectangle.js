@@ -1,5 +1,7 @@
 #!/usr/bin/node
-/* Create an instance method called print() that prints the rectangle using the character X */
+/*
+    If w or h is equal to 0 or not a positive integer, create an empty object
+*/
 class Rectangle {
   constructor (w, h) {
     if (h <= 0 || w <= 0 || h === undefined || w === undefined) {
@@ -7,13 +9,6 @@ class Rectangle {
     }
     this.width = w;
     this.height = h;
-  }
-
-  print () {
-    let i;
-    for (i = 0; i < this.height; i++) {
-      console.log('X'.repeat(this.width));
-    }
   }
 }
 module.exports = Rectangle;
