@@ -1,15 +1,14 @@
 #!/usr/bin/python3
 """
-Python script that fetches https://intranet.hbtn.io/status
+Write a Python script that fetches https://intranet.hbtn.io/status
 """
-from urllib.request import Request, urlopen
+
+import urllib.request
 
 if __name__ == "__main__":
-    url = 'https://intranet.hbtn.io/status'
-    req = Request(url)
-    with urlopen(req) as response:
-        data = response.read()
+    with urllib.request.urlopen("https://intranet.hbtn.io/status") as res:
+        response = res.read()
         print("Body response:")
-        print("\t- type: {}".format(type(data)))
-        print("\t- content: {}".format(data))
-        print("\t- utf8 content: {}".format(data.decode("utf8")))
+        print("\t- type: {}".format(type(response)))
+        print("\t- content: {}".format(response))
+        print("\t- utf8 content: {}".format(response.decode('utf-8')))
